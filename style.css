@@ -1,0 +1,125 @@
+
+body{
+    overflow-x: hidden;
+    width: 100%;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.menu{
+    display: flex;
+    width: 100%;
+    max-width: 1199px;
+    justify-content: space-between;
+    margin: 0px auto;
+    align-items: center;
+    position: relative;
+}
+.logo h3{
+    font-size: 40px;
+    margin: 0;
+    color: #6132e2;
+}
+.menu ul{
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+}
+.menu ul li{
+    padding: 0px 5px;
+}
+.menu ul li a{
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(6, 0, 23);
+    position: relative;
+}
+.menu ul li a::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 2px;
+    bottom: -2px;
+    transform: scaleX(0.1);
+    background: #6132e2;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.menu ul li a:hover{
+    color: #6132e2;
+    transition: all 0.3s ease-in-out;
+}
+.menu ul li a:hover::before{
+    opacity: 1;
+    transform: scale(0.7);
+    transition: all 0.3s ease-in-out;
+}
+.menu button{
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    display: inline-block;
+    padding: 0;
+    width: 26px;
+    cursor: pointer;
+    height: 20px;
+    display: none;
+}
+.menu button span{
+    width: 26px;
+    height: 2px;
+    position: absolute;
+    background: #6132e2;
+    top: 0px;
+    left: 0;
+}
+.menu button span:nth-child(2){
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.menu button span:nth-child(3){
+    top: unset;
+    bottom: 0;
+}
+
+@media screen and (max-width: 991px){
+    body{
+        padding: 20px;
+        width: auto;
+    }
+    .menu button{
+        display: block;
+    }
+    /* .menu button.cross span:nth-child(3){
+        transform: s;
+    } */
+    .menu ul{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        background: #6132e2;
+        padding: 10px 0;
+        border-radius: 10px;
+        transform: scaleY(0) translate(0, -100%);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+    .menu ul li{
+        padding: 5px 0px;
+    }
+    .menu ul li a{
+        color: #fff;
+    }
+    .menu ul.responsive{
+        transform: scaleY(1) translate(0, 0%);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+}
